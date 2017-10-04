@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MajorMinorScales</string>
+    <string name="tonic_prompt">Tonic</string>
+    <string-array name="tonic_array">
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>A</item>
+        <item>B</item>
+    </string-array>
+
+    <string name="scale_prompt">Scale</string>
+    <string-array name="scale_array">
+        <item>Major</item>
+        <item>Natural Minor</item>
+        <item>Harmonic Minor</item>
+        <item>Melodic Minor</item>
+    </string-array>
+</resources>
