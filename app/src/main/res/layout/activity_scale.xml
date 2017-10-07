@@ -13,12 +13,27 @@
         android:background="#2dc3ff"
         android:gravity="center_vertical"
         android:paddingLeft="16dp"
-        android:text="C Major"
+        android:text=""
         android:textAllCaps="true"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/scale_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scale_header" />
 
 </android.support.constraint.ConstraintLayout>
