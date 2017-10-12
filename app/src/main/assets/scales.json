@@ -1,97 +1,137 @@
 {
     "C": {
-      "major": "C, D, E, F, G, A, B, C",
-      "naturalminor": "C, D, Eb, F, G, Ab, Bb, C",
-      "harmonicminor": "C, D, Eb, F, G, Ab, B, C",
-      "melodicminor": "C, D, Eb, F, G, A, B, C",
+      "major": "C  D  E  F  G  A  B  C",
+      "naturalminor": "C  D  Eb  F  G  Ab  Bb  C",
+      "harmonicminor": "C  D  Eb  F  G  Ab  B  C",
+      "melodicminor": "C  D  Eb  F  G  A  B  C",
       "majorpopularsongs": ["When Doves Cry - Prince", "Imagine - John Lennon"],
       "minorpopularsongs": ["Rolling in the Deep - Adele", "I Need Your Love - Calvin Harris", "All Along the Watchtower - Jimi Hendrix"]
     },
     "C#": {
-      "major": "C#, D#, E#, F#, G#, A#, B#, C#",
-      "naturalminor": "C#, D#, E#, F#, G#, A, B, C#",
-      "harmonicminor": "C#, D#, E#, F#, G#, A, B#, C#",
-      "melodicminor": "C#, D#, E, F#, G#, A#, B#, C#",
+      "major": "C#  D#  E#  F#  G#  A#  B#  C#",
+      "naturalminor": "C#  D#  E#  F#  G#  A  B  C#",
+      "harmonicminor": "C#  D#  E#  F#  G#  A  B#  C#",
+      "melodicminor": "C#  D#  E  F#  G#  A#  B#  C#",
+      "majorpopularsongs": ["Mr. Brightside - The Killers"],
+      "minorpopularsongs": ["One Step Closer - Linkin Park", "Moonlight Sonata - Ludwig van Beethoven"]
+    },
+    "Db": {
+      "major": "Db  Eb  F  Gb  Ab  Bb  C  Db",
+      "naturalminor": "Db  Eb  F  Gb  Ab  Bbb  Cb  Db",
+      "harmonicminor": "Db  Eb  F  Gb  Ab  Bbb  C  Db",
+      "melodicminor": "Db  Eb  Fb  Gb  Ab  Bb  C  Db",
       "majorpopularsongs": ["Mr. Brightside - The Killers"],
       "minorpopularsongs": ["One Step Closer - Linkin Park", "Moonlight Sonata - Ludwig van Beethoven"]
     },
     "D": {
-      "major": "D, E, F#, G, A, B, C#, D",
-      "naturalminor": "D, E, F, G, A, Bb, C, D",
-      "harmonicminor": "D, E, F, G, A, Bb, C#, D",
-      "melodicminor": "D, E, F, G, A, B, C#, D",
+      "major": "D  E  F#  G  A  B  C#  D",
+      "naturalminor": "D  E  F  G  A  Bb  C  D",
+      "harmonicminor": "D  E  F  G  A  Bb  C#  D",
+      "melodicminor": "D  E  F  G  A  B  C#  D",
       "majorpopularsongs": ["Under the Bridge - Red Hot Chili Peppers", "Only Girl (In the World) - Rihanna", "I Would Die 4 U - Prince"],
       "minorpopularsongs": ["21 Guns - Green Day", "Black Magic Woman - Santana", "Layla - Eric Clapton"]
     },
     "D#": {
-      "major": "D#, E#, F##, G#, A#, B#, C##, D#",
-      "naturalminor": "D#, E#, F#, G#, A#, B, C#, D#",
-      "harmonicminor": "D#, E#, F#, G#, A#, B, C##, D#",
-      "melodicminor": "D#, E#, F#, G#, A#, B#, C##, D#",
+      "major": "D#  E#  F##  G#  A#  B#  C##  D#",
+      "naturalminor": "D#  E#  F#  G#  A#  B  C#  D#",
+      "harmonicminor": "D#  E#  F#  G#  A#  B  C##  D#",
+      "melodicminor": "D#  E#  F#  G#  A#  B#  C##  D#",
+      "majorpopularsongs": ["Mirrors - Justin Timberlake", "The Real Slim Shady - Eminem", "Honey - Mariah Carey"],
+      "minorpopularsongs": ["Girls - The 1975", "Superstition - Stevie Wonder", "Stronger - Kanye West"]
+    },
+    "Eb": {
+      "major": "Eb  F  G  Ab  Bb  C  D  Eb",
+      "naturalminor": "Eb  F  Gb  Ab  Bb  Cb  Db  Eb",
+      "harmonicminor": "Eb  F  Gb  Ab  Bb  Cb  D  Eb",
+      "melodicminor": "Eb  F  Gb  Ab  Bb  C  D  Eb",
       "majorpopularsongs": ["Mirrors - Justin Timberlake", "The Real Slim Shady - Eminem", "Honey - Mariah Carey"],
       "minorpopularsongs": ["Girls - The 1975", "Superstition - Stevie Wonder", "Stronger - Kanye West"]
     },
     "E": {
-      "major": "E, F#, G#, A, B, C#, D#, E",
-      "naturalminor": "E, F#, G, A, B, C, D, E",
-      "harmonicminor": "E, F#, G, A, B, C, D#, E",
-      "melodicminor": "E, F#, G, A, B, C#, D#, E",
+      "major": "E  F#  G#  A  B  C#  D#  E",
+      "naturalminor": "E  F#  G  A  B  C  D  E",
+      "harmonicminor": "E  F#  G  A  B  C  D#  E",
+      "melodicminor": "E  F#  G  A  B  C#  D#  E",
       "majorpopularsongs": ["Norwegian Wood (This Bird Has Flown) - The Beatles", "Single Ladies (Put A Ring on It) - Beyonce", "No One - Alicia Keys"],
       "minorpopularsongs": ["Livin on a Prayer - Bon Jovi", "Stayin Alive - Bee Gees"]
     },
     "F": {
-      "major": "F, G, A, Bb, C, D, E, F",
-      "naturalminor": "F, G, Ab, Bb, C, Db, Eb, F",
-      "harmonicminor": "F, G, Ab, Bb, C, Db, E, F",
-      "melodicminor": "F, G, Ab, Bb, C, D, E, F",
+      "major": "F  G  A  Bb  C  D  E  F",
+      "naturalminor": "F  G  Ab  Bb  C  Db  Eb  F",
+      "harmonicminor": "F  G  Ab  Bb  C  Db  E  F",
+      "melodicminor": "F  G  Ab  Bb  C  D  E  F",
       "majorpopularsongs": ["Crazy in Love - Beyonce", "Theme from New York, New York - Frank Sinatra", "The Scientist - Coldplay"],
       "minorpopularsongs": ["Boulevard of Broken Dreams - Green Day", "Smells Like Teen Spirit - Nirvana"]
     },
     "F#": {
-      "major": "F#, G#, A#, B, C#, D#, E#, F#",
-      "naturalminor": "F#, G#, A, B, C#, D, E, F#",
-      "harmonicminor": "F#, G#, A, B, C#, D, E#, F#",
-      "melodicminor": "F#, G#, A, B, C#, D#, E#, F#",
+      "major": "F#  G#  A#  B  C#  D#  E#  F#",
+      "naturalminor": "F#  G#  A  B  C#  D  E  F#",
+      "harmonicminor": "F#  G#  A  B  C#  D  E#  F#",
+      "melodicminor": "F#  G#  A  B  C#  D#  E#  F#",
+      "majorpopularsongs": ["All Star - Smash Mouth", "What's My Age Again? - Blink-182", "Team - Lorde"],
+      "minorpopularsongs": ["Wonderwall - Oasis", "Billie Jean - Michael Jackson"]
+    },
+    "Gb": {
+      "major": "Gb  Ab  Bb  Cb  Db  Eb  F  Gb",
+      "naturalminor": "Gb  Ab  Bbb  Cb  Db  Ebb  Fb  Gb",
+      "harmonicminor": "Gb  Ab  Bbb  Cb  Db  Ebb  F  Gb",
+      "melodicminor": "Gb  Ab  Bbb  Cb  Db  Eb  F  Gb",
       "majorpopularsongs": ["All Star - Smash Mouth", "What's My Age Again? - Blink-182", "Team - Lorde"],
       "minorpopularsongs": ["Wonderwall - Oasis", "Billie Jean - Michael Jackson"]
     },
     "G": {
-      "major": "G, A, B, C, D, E, F#, G",
-      "naturalminor": "G, A, Bb, C, D, Eb, F, G",
-      "harmonicminor": "G, A, Bb, C, D, Eb, F#, G",
-      "melodicminor": "G, A, Bb, C, D, E, F#, G",
+      "major": "G  A  B  C  D  E  F#  G",
+      "naturalminor": "G  A  Bb  C  D  Eb  F  G",
+      "harmonicminor": "G  A  Bb  C  D  Eb  F#  G",
+      "melodicminor": "G  A  Bb  C  D  E  F#  G",
       "majorpopularsongs": ["Wish You Were Here - Pink Floyd", "Man in the Mirror - Michael Jackson", "Hey Ya! - OutKast"],
       "minorpopularsongs": ["Rock the Boat - Aaliyah", "Ain't It Funny - Jennifer Lopez"]
     },
     "G#": {
-      "major": "G#, A#, B#, C#, D#, E#, F##, G#",
-      "naturalminor": "G#, A#, B, C#, D#, E, F#, G#",
-      "harmonicminor": "G#, A#, B, C#, D#, E, F##, G#",
-      "melodicminor": "G#, A#, B, C#, D#, E#, F##, G#",
+      "major": "G#  A#  B#  C#  D#  E#  F##  G#",
+      "naturalminor": "G#  A#  B  C#  D#  E  F#  G#",
+      "harmonicminor": "G#  A#  B  C#  D#  E  F##  G#",
+      "melodicminor": "G#  A#  B  C#  D#  E#  F##  G#",
+      "majorpopularsongs": ["Celebration - Kool & the Gang", "Escapade - Janet Jackson", "Can You Stand the Rain - New Edition"],
+      "minorpopularsongs": ["Passionfruit - Drake"]
+    },
+    "Ab": {
+      "major": "Ab  Bb  C  Db  Eb  F  G  Ab",
+      "naturalminor": "Ab  Bb  Cb  Db  Eb  Fb  Gb  Ab",
+      "harmonicminor": "Ab  Bb  Cb  Db  Eb  Fb  G  Ab",
+      "melodicminor": "Ab  Bb  Cb  Db  Eb  F  G  Ab",
       "majorpopularsongs": ["Celebration - Kool & the Gang", "Escapade - Janet Jackson", "Can You Stand the Rain - New Edition"],
       "minorpopularsongs": ["Passionfruit - Drake"]
     },
     "A": {
-      "major": "A, B, C#, D, E, F#, G#, A",
-      "naturalminor": "A, B, C, D, E, F, G, A",
-      "harmonicminor": "A, B, C, D, E, F, G#, A",
-      "melodicminor": "A, B, C, D, E, F#, G#, A",
+      "major": "A  B  C#  D  E  F#  G#  A",
+      "naturalminor": "A  B  C  D  E  F  G  A",
+      "harmonicminor": "A  B  C  D  E  F  G#  A",
+      "melodicminor": "A  B  C  D  E  F#  G#  A",
       "majorpopularsongs": ["Kids - MGMT", "Turn on the Lights - Future", "Alive - Pearl Jam"],
       "minorpopularsongs": ["Misty Mountain Hop - Led Zeppelin", "Can't Feel My Face - The Weeknd"]
     },
     "A#": {
-      "major": "A#, B#, C##, D#, E#, F##, G##, A#",
-      "naturalminor": "A#, B#, C#, D#, E#, F#, G#, A#",
-      "harmonicminor": "A#, B#, C#, D#, E#, F#, G##, A#",
-      "melodicminor": "A#, B#, C#, D#, E#, F##, G##, A#",
+      "major": "A#  B#  C##  D#  E#  F##  G##  A#",
+      "naturalminor": "A#  B#  C#  D#  E#  F#  G#  A#",
+      "harmonicminor": "A#  B#  C#  D#  E#  F#  G##  A#",
+      "melodicminor": "A#  B#  C#  D#  E#  F##  G##  A#",
+      "majorpopularsongs": ["Purple Rain - Prince", "Bohemian Rhapsody - Queen"],
+      "minorpopularsongs": ["Sunday Bloody Sunday - U2", "Umbrella - Rihanna", "One Dance - Drake"]
+    },
+    "Bb": {
+      "major": "Bb  C  D  Eb  F  G  A  Bb",
+      "naturalminor": "Bb  C  Db  Eb  F  Gb  Ab  Bb",
+      "harmonicminor": "Bb  C  Db  Eb  F  Gb  A  Bb",
+      "melodicminor": "Bb  C  Db  Eb  F  G  A  Bb",
       "majorpopularsongs": ["Purple Rain - Prince", "Bohemian Rhapsody - Queen"],
       "minorpopularsongs": ["Sunday Bloody Sunday - U2", "Umbrella - Rihanna", "One Dance - Drake"]
     },
     "B": {
-      "major": "B, C#, D#, E, F#, G#, A#, B",
-      "naturalminor": "B, C#, D, E, F#, G, A, B",
-      "harmonicminor": "B, C#, D, E, F#, G, A#, B",
-      "melodicminor": "B, C#, D, E, F#, G#, A#, B",
+      "major": "B  C#  D#  E  F#  G#  A#  B",
+      "naturalminor": "B  C#  D  E  F#  G  A  B",
+      "harmonicminor": "B  C#  D  E  F#  G  A#  B",
+      "melodicminor": "B  C#  D  E  F#  G#  A#  B",
       "majorpopularsongs": ["Monkey Wrench - Foo Fighters", "When You Were Young - The Killers", "Super Bass - Nicki Minaj"],
       "minorpopularsongs": ["Hotel California - The Eagles", "Comfortably Numb - Pink Floyd", "Wake Me Up - Avicii"]
     }
