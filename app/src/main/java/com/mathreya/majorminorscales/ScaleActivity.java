@@ -10,6 +10,8 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -31,15 +33,12 @@ public class ScaleActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         TextView scaleHeader = (TextView) findViewById(R.id.scale_header);
         scaleHeader.setText(bundle.getString("Tonic") + " " + bundle.getString("Scale"));
-        if (bundle.getString("Scale").equals("Major")) {
-            new MajScaleNotes().execute(bundle.getString("Tonic"));
-        } else if (bundle.getString("Scale").equals("Natural Minor")) {
-            new NatMinScaleNotes().execute(bundle.getString("Tonic"));
-        }
+        new ScaleNotes().execute(bundle.getString("Tonic"), bundle.getString("Scale").toLowerCase().replace(" ", ""));
     }
 
-    private class MajScaleNotes extends AsyncTask<String, Void, Void> {
+    private class ScaleNotes extends AsyncTask<String, Void, Void> {
         String notes;
+        String json;
 
         @Override
         protected void onPreExecute() {
@@ -52,39 +51,20 @@ public class ScaleActivity extends AppCompatActivity {
         }
 
         protected Void doInBackground(String... args) {
-            String json = null;
             try {
                 InputStream is = getAssets().open("scales.json");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                json = new String(buffer, "UTF-8");
 
-        @Override
-        protected void onPostExecute(Void result) {
-            mProgressDialog.dismiss();
-            TextView txt = (TextView) findViewById(R.id.scale_notes);
-            txt.setText(notes);
-        }
-    }
-
-    private class NatMinScaleNotes extends AsyncTask<String, Void, Void> {
-        String notes;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressDialog = new ProgressDialog(ScaleActivity.this);
-            mProgressDialog.setTitle("Natural Minor Scales");
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            mProgressDialog.show();
-        }
-
-        protected Void doInBackground(String... args) {
-            try {
-
+                JSONObject obj = new JSONObject(json);
+                String tonic = args[0];
+                String scale = args[1];
+                JSONObject ton = obj.getJSONObject(tonic);
+                Log.i(tonic + " " + scale, ton.getString(scale));
+                notes = ton.getString(scale);
             } catch (Exception e) {
                 e.printStackTrace();
             }
