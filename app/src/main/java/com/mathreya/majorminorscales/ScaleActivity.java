@@ -2,11 +2,16 @@ package com.mathreya.majorminorscales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.json.JSONObject;
@@ -21,6 +26,7 @@ import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyCallback;
 import kaaes.spotify.webapi.android.SpotifyError;
 import kaaes.spotify.webapi.android.SpotifyService;
+import kaaes.spotify.webapi.android.models.Image;
 import kaaes.spotify.webapi.android.models.Track;
 
 import okhttp3.Headers;
@@ -41,6 +47,11 @@ public class ScaleActivity extends AppCompatActivity {
     private String sc;
     private String json;
     private String access_token;
+    private String preview;
+    private boolean playOrPause;
+    private ImageButton playPauseBtn;
+    private MediaPlayer mPlayer;
+    private boolean initialize = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +72,10 @@ public class ScaleActivity extends AppCompatActivity {
         new ScaleNotes().execute(tonic, scale.toLowerCase().replace(" ", ""));
         sc = (scale.equals("Major")) ? "major" : "minor";
         login();
+        playPauseBtn = (ImageButton) findViewById(R.id.playpause_btn);
+        mPlayer = new MediaPlayer();
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        playPauseBtn.setOnClickListener(playPauseListener);
 
     }
 
@@ -119,10 +134,65 @@ public class ScaleActivity extends AppCompatActivity {
 //            Response response = client.newCall(request).execute();
 //            JSONObject res = new JSONObject(response.body().string());
 //            Log.i("ScaleActivity Spotify", res.getString("preview_url"));
-            String preview = track.preview_url;
+            preview = track.preview_url;
             Log.i(songtitle, preview);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private View.OnClickListener playPauseListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (!playOrPause) {
+                playPauseBtn.setImageResource(android.R.drawable.ic_media_pause);
+                if (initialize) new Player().execute(preview);
+                if (!mPlayer.isPlaying()) mPlayer.start();
+                playOrPause = true;
+            } else {
+                playPauseBtn.setImageResource(android.R.drawable.ic_media_play);
+                if (mPlayer.isPlaying()) mPlayer.pause();
+                playOrPause = false;
+            }
+        }
+    };
+
+    private class Player extends AsyncTask<String, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = new ProgressDialog(ScaleActivity.this);
+            mProgressDialog.setTitle("MediaPlayer");
+            mProgressDialog.setMessage("Loading...");
+        }
+
+        @Override
+        protected Void doInBackground(String... args) {
+            try {
+                mPlayer.setDataSource(args[0]);
+                mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        playOrPause = false;
+                        initialize = true;
+                        playPauseBtn.setImageResource(android.R.drawable.ic_media_play);
+                        mPlayer.stop();
+                        mPlayer.reset();
+                    }
+                });
+                mPlayer.prepare();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            mProgressDialog.dismiss();
+            mPlayer.start();
+            initialize = false;
         }
     }
 
