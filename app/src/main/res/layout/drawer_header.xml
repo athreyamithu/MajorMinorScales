@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/colorPrimary"
+    android:paddingLeft="30dp">
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:layout_gravity="start|top"
+        android:layout_marginTop="55dp" />
+
+</LinearLayout>

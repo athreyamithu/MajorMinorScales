@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.mathreya.majorminorscales.SearchActivity">
+    tools:context="com.mathreya.majorminorscales.SearchFragment">
 
     <Spinner
         android:id="@+id/tonic_spinner"
