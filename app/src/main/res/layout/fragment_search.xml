@@ -34,14 +34,14 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.052"
+        app:layout_constraintVertical_bias="0.054"
         android:layout_marginRight="67dp" />
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="260dp"
+        android:layout_marginBottom="230dp"
         android:background="#f52567"
         android:text="OK"
         android:textColor="#ffffff"
@@ -78,8 +78,6 @@
         android:text="Select a scale"
         android:textStyle="bold"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="379dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -87,6 +85,8 @@
 
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="0.891" />
+        app:layout_constraintHorizontal_bias="0.891"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/tonic_select" />
 
 </android.support.constraint.ConstraintLayout>
