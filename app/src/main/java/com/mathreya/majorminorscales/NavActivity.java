@@ -25,7 +25,9 @@ public class NavActivity extends AppCompatActivity
         setContentView(R.layout.nav_drawer);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Major Minor Scales");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mTitle = mDrawerTitle = getTitle();
@@ -74,14 +76,17 @@ public class NavActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         if (id == R.id.nav_search) {
-            Toast.makeText(NavActivity.this, "Search selected", Toast.LENGTH_SHORT);
             try {
                 fragment = SearchFragment.class.newInstance();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else if (id == R.id.nav_guide) {
-            Toast.makeText(NavActivity.this, "Guide selected", Toast.LENGTH_SHORT);
+            try {
+                fragment = GuideFragment.class.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         if (fragment != null) {
