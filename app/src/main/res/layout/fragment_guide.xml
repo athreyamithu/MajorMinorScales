@@ -1,75 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
 
-    <ScrollView
-        android:layout_width="333dp"
-        android:layout_height="493dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923"
-        tools:layout_editor_absoluteY="61dp">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.mathreya.majorminorscales.GuideFragment">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:background="@color/colorPrimaryDark"
-                card_view:cardCornerRadius="2dp"
-                card_view:contentPadding="10dp"
-                card_view:cardUseCompatPadding="true"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="33dp">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="11dp"
-                    android:text="Major"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="60dp"
-                    android:text="W-W-H-W-W-W-H"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-    </ScrollView>
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/scale_recycler"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_width="368dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

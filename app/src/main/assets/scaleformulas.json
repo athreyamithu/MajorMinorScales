@@ -1,0 +1,20 @@
+{
+  "formulas": [
+    {
+      "name": "Major",
+      "formula": "W-W-H-W-W-W-H"
+    },
+    {
+      "name": "Natural Minor",
+      "formula": "W-H-W-W-H-W-W"
+    },
+    {
+      "name": "Harmonic Minor",
+      "formula": "W-H-W-W-H-W+H-H"
+    },
+    {
+      "name": "Melodic Minor",
+      "formula": "W-H-W-W-W-W-H"
+    }
+  ]
+}
