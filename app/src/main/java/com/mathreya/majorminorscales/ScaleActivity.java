@@ -2,6 +2,8 @@ package com.mathreya.majorminorscales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
@@ -12,11 +14,13 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.net.URL;
 
 import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
@@ -136,9 +140,22 @@ public class ScaleActivity extends AppCompatActivity {
 //            Log.i("ScaleActivity Spotify", res.getString("preview_url"));
             preview = track.preview_url;
             Log.i(songtitle, preview);
+            ImageView imageView = (ImageView) findViewById(R.id.album_img);
+            imageView.setImageBitmap(loadBitmap(track.album.images.get(1).url));
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Bitmap loadBitmap(String url) {
+        Bitmap bitmap = null;
+        try {
+            InputStream in = new URL(url).openStream();
+            bitmap = BitmapFactory.decodeStream(in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bitmap;
     }
 
     private View.OnClickListener playPauseListener = new View.OnClickListener() {
