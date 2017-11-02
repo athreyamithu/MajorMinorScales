@@ -65,6 +65,8 @@
         app:layout_constraintTop_toBottomOf="@+id/playpause_btn"
         app:layout_constraintVertical_bias="1.0" />
 
-    <include layout="@layout/media_player" />
+    <!--<include layout="@layout/media_player"-->
+        <!--tools:layout_editor_absoluteY="155dp"-->
+        <!--tools:layout_editor_absoluteX="25dp" />-->
 
 </android.support.constraint.ConstraintLayout>

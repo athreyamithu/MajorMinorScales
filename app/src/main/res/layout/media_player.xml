@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#000000">
 
-    <android.support.v7.widget.CardView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="2dp"
+            android:paddingRight="1dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="0:30"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
 
         <ImageView
             android:id="@+id/album_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
-    </android.support.v7.widget.CardView>
-</FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/seconds"
+            android:layout_toRightOf="@id/album_img"
+            android:paddingBottom="4dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="4dp"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="#1ED760"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:backgroundTint="#1ED760"
+            android:layout_below="@+id/progressBar"
+            android:layout_toRightOf="@+id/album_img"
+            android:layout_alignBottom="@id/album_img"
+            />
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/imageButton2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignTop="@+id/imageButton"-->
+            <!--android:layout_marginLeft="27dp"-->
+            <!--android:layout_marginStart="27dp"-->
+            <!--android:layout_toEndOf="@+id/imageButton"-->
+            <!--android:layout_toRightOf="@+id/imageButton"-->
+            <!--app:srcCompat="@drawable/spotify_icon_rgb_green" />-->
+
+        <!--<Space-->
+        <!--android:id="@+id/space_after_bar"-->
+        <!--android:layout_width="2dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/progressBar" />-->
+
+        <!--<Space-->
+        <!--android:id="@+id/space_after_seconds"-->
+        <!--android:layout_width="2dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_toRightOf="@id/seconds" />-->
+
+        <!--<Space-->
+        <!--android:id="@+id/space_after_albumimg"-->
+        <!--android:layout_width="2dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/album_img" />-->
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
