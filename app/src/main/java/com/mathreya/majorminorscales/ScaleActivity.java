@@ -2,6 +2,7 @@ package com.mathreya.majorminorscales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
@@ -76,7 +77,7 @@ public class ScaleActivity extends AppCompatActivity {
         new ScaleNotes().execute(tonic, scale.toLowerCase().replace(" ", ""));
         sc = (scale.equals("Major")) ? "major" : "minor";
         login();
-        playPauseBtn = (ImageButton) findViewById(R.id.playpause_btn);
+        playPauseBtn = (ImageButton) findViewById(R.id.playButton);
         mPlayer = new MediaPlayer();
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         playPauseBtn.setOnClickListener(playPauseListener);
@@ -123,8 +124,11 @@ public class ScaleActivity extends AppCompatActivity {
             JSONObject obj = new JSONObject(json);
             String id = obj.getJSONObject(tonic).getString(scale + "spotifyids");
             String songtitle = obj.getJSONObject(tonic).getJSONArray(scale + "popularsongs").get(0).toString();
-            TextView songtext = (TextView) findViewById(R.id.song_title);
-            songtext.setText(songtitle);
+            String[] arr = songtitle.split(" - ");
+            TextView trackText = (TextView) findViewById(R.id.trackname);
+            trackText.setText(arr[0]);
+            TextView artistText = (TextView) findViewById(R.id.artistname);
+            artistText.setText(arr[1]);
             SpotifyApi api = new SpotifyApi();
             api.setAccessToken(access_token);
             SpotifyService service = api.getService();
@@ -142,6 +146,7 @@ public class ScaleActivity extends AppCompatActivity {
             Log.i(songtitle, preview);
             ImageView imageView = (ImageView) findViewById(R.id.album_img);
             imageView.setImageBitmap(loadBitmap(track.album.images.get(1).url));
+            ImageButton spotifyButton = (ImageButton) findViewById(R.id.spotifyButton);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -163,6 +168,7 @@ public class ScaleActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (!playOrPause) {
                 playPauseBtn.setImageResource(android.R.drawable.ic_media_pause);
+                //playPauseBtn.setBackgroundTintList(ColorStateList.valueOf((int) Long.parseLong("1ED760", 16)));
                 if (initialize) new Player().execute(preview);
                 if (!mPlayer.isPlaying()) mPlayer.start();
                 playOrPause = true;
