@@ -1,0 +1,36 @@
+package com.mathreya.majorminorscales;
+
+/**
+ * Created by mithileshathreya on 11/3/17.
+ */
+
+public class ProgressTimeUtils {
+    public String milliSecondsToTimer(long milliseconds) {
+        String finalTimeString = "";
+        String secondsString;
+        int minutes = (int) (milliseconds % (1000 * 60 * 60)) / (1000 * 60);
+        int seconds = (int) ((milliseconds % (1000 * 60 * 60)) % (1000 * 60) / 1000);
+        if (seconds < 10) {
+            secondsString = "0" + seconds;
+        } else {
+            secondsString = "" + seconds;
+        }
+        finalTimeString += minutes + ":" + secondsString;
+        return finalTimeString;
+    }
+
+    public int progressToTimer(int progress, int totalDuration) {
+        int currentDuration = 0;
+        totalDuration = (int) totalDuration / 1000;
+        currentDuration = (int) ((((double) progress) / 100) * totalDuration);
+        return currentDuration * 1000;
+    }
+
+    public int getProgressPercentage(long currentDuration, long totalDuration) {
+        double percentage = (double) 0;
+        long currentSeconds = (int) (currentDuration / 1000);
+        long totalSeconds = (int) (totalDuration / 1000);
+        percentage = (((double) currentSeconds) / totalSeconds) * 100;
+        return (int) percentage;
+    }
+}

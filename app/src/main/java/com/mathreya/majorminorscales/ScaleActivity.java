@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONObject;
@@ -57,6 +59,10 @@ public class ScaleActivity extends AppCompatActivity {
     private ImageButton playPauseBtn;
     private MediaPlayer mPlayer;
     private boolean initialize = true;
+    private ProgressBar progressBar;
+    private TextView seconds;
+    private Handler mHandler = new Handler();
+    private ProgressTimeUtils utils = new ProgressTimeUtils();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +87,10 @@ public class ScaleActivity extends AppCompatActivity {
         mPlayer = new MediaPlayer();
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         playPauseBtn.setOnClickListener(playPauseListener);
-
+        seconds = (TextView) findViewById(R.id.seconds);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setProgress(0);
+        progressBar.setMax(100);
     }
 
     private void login() {
@@ -146,7 +155,7 @@ public class ScaleActivity extends AppCompatActivity {
             Log.i(songtitle, preview);
             ImageView imageView = (ImageView) findViewById(R.id.album_img);
             imageView.setImageBitmap(loadBitmap(track.album.images.get(1).url));
-            ImageButton spotifyButton = (ImageButton) findViewById(R.id.spotifyButton);
+            //ImageButton spotifyButton = (ImageButton) findViewById(R.id.spotifyButton);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -172,11 +181,26 @@ public class ScaleActivity extends AppCompatActivity {
                 if (initialize) new Player().execute(preview);
                 if (!mPlayer.isPlaying()) mPlayer.start();
                 playOrPause = true;
+                updateProgressBar();
             } else {
                 playPauseBtn.setImageResource(android.R.drawable.ic_media_play);
                 if (mPlayer.isPlaying()) mPlayer.pause();
                 playOrPause = false;
             }
+        }
+    };
+
+    public void updateProgressBar() {
+        mHandler.postDelayed(updateTimeTask, 100);
+    }
+
+    private Runnable updateTimeTask = new Runnable() {
+        public void run() {
+            long currentDuration = mPlayer.getCurrentPosition();
+            seconds.setText("" + utils.milliSecondsToTimer(currentDuration));
+            int progress = utils.getProgressPercentage(currentDuration, 30000);
+            progressBar.setProgress(progress);
+            mHandler.postDelayed(this, 100);
         }
     };
 
