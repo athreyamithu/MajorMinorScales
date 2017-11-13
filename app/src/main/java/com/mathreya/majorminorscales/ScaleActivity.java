@@ -209,6 +209,10 @@ public class ScaleActivity extends AppCompatActivity {
             int progress = utils.getProgressPercentage(currentDuration, 30000);
             progressBar.setProgress(progress);
             mHandler.postDelayed(this, 100);
+            if (progress >= 100) {
+                progressBar.setProgress(0);
+                seconds.setText("0:00");
+            }
         }
     };
 

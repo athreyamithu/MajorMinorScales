@@ -20,14 +20,14 @@ public class ProgressTimeUtils {
     }
 
     public int progressToTimer(int progress, int totalDuration) {
-        int currentDuration = 0;
-        totalDuration = (int) totalDuration / 1000;
+        int currentDuration;
+        totalDuration = totalDuration / 1000;
         currentDuration = (int) ((((double) progress) / 100) * totalDuration);
         return currentDuration * 1000;
     }
 
     public int getProgressPercentage(long currentDuration, long totalDuration) {
-        double percentage = (double) 0;
+        double percentage;
         long currentSeconds = (int) (currentDuration / 1000);
         long totalSeconds = (int) (totalDuration / 1000);
         percentage = (((double) currentSeconds) / totalSeconds) * 100;
