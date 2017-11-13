@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -155,7 +156,14 @@ public class ScaleActivity extends AppCompatActivity {
             Log.i(songtitle, preview);
             ImageView imageView = (ImageView) findViewById(R.id.album_img);
             imageView.setImageBitmap(loadBitmap(track.album.images.get(1).url));
-            //ImageButton spotifyButton = (ImageButton) findViewById(R.id.spotifyButton);
+            final String url = track.external_urls.get("spotify");
+            ImageButton spotifyButton = (ImageButton) findViewById(R.id.spotifyButton);
+            spotifyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }
