@@ -2,7 +2,6 @@ package com.mathreya.majorminorscales;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioManager;
@@ -15,7 +14,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -143,15 +141,6 @@ public class ScaleActivity extends AppCompatActivity {
             api.setAccessToken(access_token);
             SpotifyService service = api.getService();
             Track track = service.getTrack(id);
-//            Headers mAuthHeader = Headers.of("Authorization", "Bearer " + access_token);
-//            Request request = new Request.Builder()
-//                    .get()
-//                    .url("https://api.spotify.com/v1/tracks/" + id)
-//                    .headers(mAuthHeader)
-//                    .build();
-//            Response response = client.newCall(request).execute();
-//            JSONObject res = new JSONObject(response.body().string());
-//            Log.i("ScaleActivity Spotify", res.getString("preview_url"));
             preview = track.preview_url;
             Log.i(songtitle, preview);
             ImageView imageView = (ImageView) findViewById(R.id.album_img);

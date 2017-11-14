@@ -19,13 +19,6 @@ public class ProgressTimeUtils {
         return finalTimeString;
     }
 
-    public int progressToTimer(int progress, int totalDuration) {
-        int currentDuration;
-        totalDuration = totalDuration / 1000;
-        currentDuration = (int) ((((double) progress) / 100) * totalDuration);
-        return currentDuration * 1000;
-    }
-
     public int getProgressPercentage(long currentDuration, long totalDuration) {
         double percentage;
         long currentSeconds = (int) (currentDuration / 1000);
