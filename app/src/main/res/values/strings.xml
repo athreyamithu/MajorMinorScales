@@ -31,4 +31,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="shared_preferences">SP</string>
+    <string name="preference_first_time">SP_FIRST_TIME</string>
+
+    <string name="welcome_pg1_header">Major Minor Scales</string>
+    <string name="welcome_pg2_header">Learn the Scales</string>
+    <string name="welcome_pg3_header">Spotify Previews</string>
+
+    <string name="welcome_pg2_description"></string>
+    <string name="welcome_pg3_description"></string>
+
+    <string name="welcome_btn_next">Next</string>
+    <string name="welcome_btn_gotIt">Got It</string>
 </resources>

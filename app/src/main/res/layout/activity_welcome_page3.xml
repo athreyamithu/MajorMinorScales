@@ -14,16 +14,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spotify Previews"
+            android:text="@string/welcome_pg3_header"
             android:textColor="#FFFFFF"
             android:textSize="35dp"
             android:textStyle="bold"/>
 
-        <ImageView
-            android:id="@+id/iconImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_play" />
+        <!--<ImageView-->
+            <!--android:id="@+id/iconImage"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@android:drawable/ic_media_play" />-->
 
     </LinearLayout>
 
